@@ -7,9 +7,11 @@ var  db = new mongodb.Db('mypractice', server, {safe:true});
       function getRandomString() {   
       var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';  
       var str = '';
-      for (i = 0; i <32 ; i++) {
+      
+          for (i = 0; i <(Math.random() * 26)+6 ; i++) {
           str += $chars.charAt(Math.floor(Math.random() * 26)+6);
-      }
+}
+      
       return str;
   }
   

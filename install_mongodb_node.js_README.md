@@ -1,5 +1,4 @@
-nstall
-step:<br>
+install step:<br>
 Ubuntu 16.04 详细参考：https://github.com/genxium/Ubuntu14InitScripts/tree/master/database/mongodb<br>
 # 1、查询ubuntu系统的型号
 $sudo lsb_release -a<br>

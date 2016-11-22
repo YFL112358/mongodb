@@ -3,7 +3,8 @@ step:<br>
 Ubuntu 16.04 详细参考：https://github.com/genxium/Ubuntu14InitScripts/tree/master/database/mongodb<br>
 # 1、查询ubuntu系统的型号
 $sudo lsb_release -a<br>
-# 2、若在Ubuntu16.04系统下, （1）、先运行 <a href = "https://github.com/genxium/Ubuntu14InitScripts/blob/master/database/mongodb/install_metapackage">install_metapackage</a> 或者 <a href = "https://github.com/genxium/Ubuntu14InitScripts/blob/master/database/mongodb/install_server">install_server</a>.
+# 2、若在Ubuntu16.04系统下, 
+（1）、先运行 <a href = "https://github.com/genxium/Ubuntu14InitScripts/blob/master/database/mongodb/install_metapackage">install_metapackage</a> 或者 <a href = "https://github.com/genxium/Ubuntu14InitScripts/blob/master/database/mongodb/install_server">install_server</a>.
 （2）、运行<a href = "https://github.com/genxium/Ubuntu14InitScripts/blob/master/database/mongodb/create_systemd_service_for_1604"> create_systemd_service_for_1604</a>
 # 3、start service
 $ sudo service mongod start<br>

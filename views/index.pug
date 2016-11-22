@@ -1,12 +1,5 @@
-extends layout
- html
-	head
-		body
-  page = page;
+html
+head
+body
+  page = page
   nperpage = nperpage
- //jade取值方式
-   ul
-     each user in users //jade模版的遍历方式
-       li
-         h4 name = #{user.name}    
-         span description = #{user.description}

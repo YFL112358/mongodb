@@ -27,7 +27,7 @@ $ sudo rm -r /var/lib/mongodb<br>
 
 # 使用 Ubuntu 并且 想运行 Node.js >= 6.x 的 安装步驟： 详情参考： https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions
 
-sudo apt-get install curl
-sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
-sudo apt-get install -y nodejs
-sudo apt-get install -y nodejs-legacy
+1、$ sudo apt-get install curl<br>
+2、$ sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -<br>
+3、$ sudo apt-get install -y nodejs<br>
+4、$ sudo apt-get install -y nodejs-legacy<br>

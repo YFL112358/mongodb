@@ -7,4 +7,7 @@ $sudo lsb_release -a<br>
 
 # 安装node.js
 参考：https://github.com/genxium/Ubuntu14InitScripts/blob/master/backend/node/init
-
+#init_data.js 
+自动新增数据
+# connection pooling 连接池
+连接池是数据库连接的缓存，客户端和服务端新建连接时，对数据库的连接可以重复使用，可以减少新建连接数。

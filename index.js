@@ -12,8 +12,6 @@ MongoClient.connect("mongodb://localhost:27017/mypractice", function(err, databa
 });
 
 var v1ApiRouter = express.Router();
-app.set('view engine','pug')
-app.set('views', './views');
 v1ApiRouter.get('/', function (req, res) {
 	//进行数据库操作
 	db.collection('item',{safe:true}, function(err, collection){
@@ -26,12 +24,14 @@ v1ApiRouter.get('/', function (req, res) {
 			console.log("page : " + page);
 
 			collection.find()
-			.skip((page-1)*nperpage)//skip()跳了几条记录，limit(一页的记录数) 
+			.skip((page - 1) * nperpage)//skip()跳了几条记录，limit(一页的记录数) 
 			.limit(nperpage)
 			.toArray(function(err,results){
 					console.log(results);
 					res.send({results:results })
 			});
+					console.log("before results");
+
 		}
 	});
 });

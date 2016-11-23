@@ -5,12 +5,6 @@ var app = express();
 var MongoClient = require('mongodb').MongoClient;
 var db;
 
-// Initialize connection once
-MongoClient.connect("mongodb://localhost:27017/mypractice", function(err, database) {
-  if (err) throw err;
-  db = database;
-});
-
 var v1ApiRouter = express.Router();
 v1ApiRouter.get('/', function (req, res) {
 	//进行数据库操作
@@ -28,17 +22,22 @@ v1ApiRouter.get('/', function (req, res) {
 			.limit(nperpage)
 			.toArray(function(err,results){
 					console.log(results);
+					
 					res.send({results:results })
+					
 			});
 					console.log("before results");
-
+         
 		}
 	});
 });
 
 app.use('/v1',v1ApiRouter);
 
-app.listen(3000,function(){
-		console.log('port 3000')
-})
-
+MongoClient.connect("mongodb://localhost:27017/mypractice", function(err, database) {
+  if (err) throw err;
+		 db = database;   
+    app.listen(3000,function(){
+    console.log('port 3000')
+   });
+});

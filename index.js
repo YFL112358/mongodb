@@ -40,9 +40,10 @@ app.use('/v1',v1ApiRouter);
 MongoClient.connect("mongodb://localhost:27017/mypractice", function(err, database) {
   if (err) { 
      console.log(err)
-           }
+           } else {
 		 db = database;   
     app.listen(3000,function(){
     console.log('port 3000')
    });
+ }
 });

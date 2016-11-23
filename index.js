@@ -21,10 +21,13 @@ v1ApiRouter.get('/', function (req, res) {
 			.skip((page - 1) * nperpage)//skip()跳了几条记录，limit(一页的记录数) 
 			.limit(nperpage)
 			.toArray(function(err,results){
+			if(err) {
+					console.log(err);	
+							} else {
 					console.log(results);
 					
 					res.send({results:results })
-					
+					}
 			});
 					console.log("before results");
          
@@ -35,7 +38,9 @@ v1ApiRouter.get('/', function (req, res) {
 app.use('/v1',v1ApiRouter);
 
 MongoClient.connect("mongodb://localhost:27017/mypractice", function(err, database) {
-  if (err) throw err;
+  if (err) { 
+     console.log(err)
+           }
 		 db = database;   
     app.listen(3000,function(){
     console.log('port 3000')

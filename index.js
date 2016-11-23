@@ -33,9 +33,10 @@ v1ApiRouter.get('/', function (req, res) {
 	.limit(nperpage)
   .toArray(function(err,results){
 		   console.log(results);
+			res.render('index', {results:results })
+
 							              	});
 
-		res.render('index', { page: page, nperpage: nperpage })
 				db.close();
 						}
 				});

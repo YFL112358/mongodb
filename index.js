@@ -1,20 +1,22 @@
-//加载mongodb驱动
-var mongodb = require('mongodb');
-//建立连接
-var server = new mongodb.Server('localhost',27017,{auto_reconnect:true});
-var db = new mongodb.Db('mypractice',server,{safe:true});
 var express = require('express');
+var mongodb = require('mongodb');
 var app = express();
+
+var MongoClient = require('mongodb').MongoClient;
+var db;
+
+// Initialize connection once
+MongoClient.connect("mongodb://localhost:27017/mypractice", function(err, database) {
+  if(err) throw err;
+  db = database;
+});
+
 
 var v1ApiRouter = express.Router();
 app.set('view engine','pug')
 app.set('views', './views');
 v1ApiRouter.get('/', function (req, res) {
 		//进行数据库操作
-		db.open(function(err, db){
-				if(!err){
-				console.log('connect db');
-				// 连接Collection（可以认为是mysql的table）
 				db.collection('item',{safe:true}, function(err, collection){
 						if(err){
 						console.log(err);
@@ -38,10 +40,10 @@ v1ApiRouter.get('/', function (req, res) {
 						db.close();
 						}
 				});
-			}
+			
 
 		});
-})
+
 
 app.use('/v1',v1ApiRouter);
 

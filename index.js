@@ -21,18 +21,18 @@ v1ApiRouter.get('/', function (req, res) {
   })  
   .catch (function(err){
     console.log(err);
-  })         		   	   
-	console.log("before results") 
+  })
+  console.log("before results") 
 });
 app.use('/v1',v1ApiRouter);
 
 MongoClient.connect("mongodb://localhost:27017/mypractice")
 .then (function(database){
-	db = database;
-	app.listen(3000,function(){
-		console.log('port 3000')
-	})
+  db = database;
+  app.listen(3000,function(){
+    console.log('port 3000')
+  })
 })
 .catch (function(err){
-	console.log(err);
+  console.log(err);
 })

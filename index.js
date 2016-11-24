@@ -6,10 +6,9 @@ var db;
 
 var v1ApiRouter = express.Router();
 v1ApiRouter.get('/', function (req, res) {
-	//进行数据库操作
+//进行数据库操作
 	var page = Number(req.query.page);//page 是第几页
   var nperpage = Number(req.query.nperpage);//分页功能，nperpage 是一页里面的记录数
-
   console.log("page : " + page);
   var collection = db.collection('item');
   collection.find()
@@ -19,15 +18,12 @@ v1ApiRouter.get('/', function (req, res) {
   .then(function(results) {
     console.log(results);
     res.send({results:results})
-   })  
+  })  
   .catch (function(err){
     console.log(err);
   })         		   	   
 	console.log("before results") 
 });
-
-
-
 app.use('/v1',v1ApiRouter);
 
 MongoClient.connect("mongodb://localhost:27017/mypractice")

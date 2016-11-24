@@ -7,7 +7,7 @@ var db;
 var v1ApiRouter = express.Router();
 v1ApiRouter.get('/', function (req, res) {
 //进行数据库操作
-	var page = Number(req.query.page);//page 是第几页
+  var page = Number(req.query.page);//page 是第几页
   var nperpage = Number(req.query.nperpage);//分页功能，nperpage 是一页里面的记录数
   console.log("page : " + page);
   var collection = db.collection('item');
